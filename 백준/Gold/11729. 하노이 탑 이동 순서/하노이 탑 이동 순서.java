@@ -1,19 +1,21 @@
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.Scanner;
 
 public class Main {
-	static Scanner scanner = new Scanner(System.in);
+	static BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 	static BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
 	
 	public static void main(String[] args) throws IOException {
-		int N = scanner.nextInt();
+		String line = bufferedReader.readLine();
+		int N = Integer.parseInt(line);
+		bufferedReader.close();
+		
 		bufferedWriter.write((int) (Math.pow(2, N) - 1) + "\n");
 		
 		hanoi_tower(N, 1, 2, 3);
-		
-		scanner.close();
 
 		bufferedWriter.flush();
 		bufferedWriter.close();
