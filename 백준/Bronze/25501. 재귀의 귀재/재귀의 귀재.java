@@ -4,15 +4,15 @@ public class Main {
     static int count = 0;
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int testCase = sc.nextInt();
+        Scanner scanner = new Scanner(System.in);
+        int T = scanner.nextInt();
 
-        for (int i = 0; i < testCase; i++) {
+        for (int i = 0; i < T; i++) {
             count = 0;
-            String str = sc.next();
+            String str = scanner.next();
             System.out.println(isPalindrome(str) + " " + count);
         }
-        sc.close();
+        scanner.close();
     }
 
     public static int isPalindrome(String s) {
