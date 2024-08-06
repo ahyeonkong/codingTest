@@ -4,7 +4,6 @@ import java.util.StringTokenizer;
 public class Main{
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
         StringTokenizer stringTokenizer;
 
         while(true){
@@ -18,7 +17,5 @@ public class Main{
         }
 
         bufferedReader.close();
-        bufferedWriter.flush();
-        bufferedWriter.close();
     }
 }
