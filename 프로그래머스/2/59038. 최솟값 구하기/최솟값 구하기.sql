@@ -1,4 +1,6 @@
 SELECT DATETIME as "시간"
 FROM ANIMAL_INS 
-ORDER BY DATETIME ASC
-LIMIT 1;
+WHERE DATETIME = (
+                    SELECT MIN(DATETIME)
+                    FROM ANIMAL_INS 
+                 )
