@@ -1,42 +1,31 @@
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.util.Scanner;
-import java.util.Stack;
+import java.io.*;
+import java.util.*;
 
 public class Main {
+
     public static void main(String[] args) throws IOException {
-        Scanner scanner = new Scanner(System.in);
-        BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
-        int T = scanner.nextInt();
-        Stack<Character> stack = null;
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
+        int T = Integer.parseInt(bufferedReader.readLine());
 
         for(int i = 0; i < T; i++){
-            stack = new Stack<>();
-            String line = scanner.next();
+            Stack<Character> stack = new Stack<>();
+            String line = bufferedReader.readLine();
             boolean isValid = true;
 
-            for(int j = 0; j < line.length(); j++){
+            for(int j = 0; j <line.length(); j++){
                 char c = line.charAt(j);
-                if(c == '(') {
-                    stack.push(c);
-                } else if(stack.isEmpty()) {
-                    isValid = false;
-                    break;
-                } else {
-                    stack.pop();
+                if(c == '(') stack.push(c);
+                else if(c == ')'){
+                    if(stack.isEmpty()) {
+                        isValid = false;
+                        break;
+                    }
+                    else stack.pop();
                 }
             }
-
-            bufferedWriter.flush();
-            if(isValid && stack.isEmpty()) {
-                bufferedWriter.write("YES\n");
-            } else {
-                bufferedWriter.write("NO\n");
-            }
+            if(stack.isEmpty() && isValid) System.out.println("YES");
+            else System.out.println("NO");
         }
-
-        scanner.close();
-        bufferedWriter.close();
     }
 }
