@@ -1,17 +1,10 @@
-import java.util.*;
-
 class Solution {
     public int[] solution(long n) {
-        List<Integer> list = new ArrayList<>();
+        String N = String.valueOf(n);
+        int[] answer = new int[N.length()];
         
-        while(n != 0){
-            list.add((int) (n % 10));
-            n /= 10;
-        }
-        
-        int[] answer = new int[list.size()];
-        for(int i = 0; i < list.size(); i++){
-            answer[i] = list.get(i);
+        for(int i = 0; i < N.length(); i++){
+            answer[N.length() - i - 1] = N.charAt(i) - '0';
         }
         return answer;
     }
