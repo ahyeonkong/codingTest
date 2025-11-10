@@ -1,17 +1,11 @@
 class Solution {
     public int[] solution(int[] num_list, int n) {
-        int count = 0;
-        for(int i = n-1; i < num_list.length; i++)
-            count++;
+        int[] answer = new int[num_list.length - n + 1];
+        int num = n - 1;
         
-        int[] answer = new int[count];
-        int k = 0;
-        
-        for(int j = n-1; j < num_list.length; j++){
-            answer[k] = num_list[j];
-            k++;
+        for(int i = 0; i < answer.length; i++){
+            answer[i] = num_list[num++];
         }
-        
         return answer;
     }
 }
