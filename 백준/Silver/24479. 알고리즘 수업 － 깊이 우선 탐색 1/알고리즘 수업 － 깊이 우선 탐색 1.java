@@ -40,13 +40,13 @@ public class Main {
 			graph[y].add(x);
 		}
 		
-		for(int i = 0; i <=N; i++) {
+		for(int i = 0; i <= N; i++) {
 			Collections.sort(graph[i]);
 		}
 		
 		dfs(R);
 		
-		for(int i = 1; i < answer.length; i++) {
+		for(int i = 1; i <= N; i++) {
 			System.out.println(answer[i]);
 		}
 		
