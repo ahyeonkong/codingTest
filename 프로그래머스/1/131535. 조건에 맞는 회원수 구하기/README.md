@@ -1,10 +1,10 @@
 # [level 1] 조건에 맞는 회원수 구하기 - 131535 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/131535) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/131535?language=oracle) 
 
 ### 성능 요약
 
-메모리: 0.0 MB, 시간: 0.00 ms
+메모리: undefined, 시간: 
 
 ### 구분
 
@@ -12,11 +12,11 @@
 
 ### 채점결과
 
-Empty
+합계: 100.0 / 100.0
 
 ### 제출 일자
 
-2025년 10월 01일 21:54:27
+2026년 05월 08일 22:32:26
 
 ### 문제 설명
 
