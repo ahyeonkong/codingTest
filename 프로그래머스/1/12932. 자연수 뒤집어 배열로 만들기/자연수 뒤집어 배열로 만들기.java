@@ -3,7 +3,7 @@ class Solution {
         String N = String.valueOf(n);
         int[] answer = new int[N.length()];
         
-        for(int i = 0; i < N.length(); i++){
+        for(int i = 0; i < answer.length; i++){
             answer[N.length() - i - 1] = N.charAt(i) - '0';
         }
         return answer;
