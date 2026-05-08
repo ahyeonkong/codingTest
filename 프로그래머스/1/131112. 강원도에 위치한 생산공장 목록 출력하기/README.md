@@ -1,10 +1,10 @@
 # [level 1] 강원도에 위치한 생산공장 목록 출력하기 - 131112 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/131112) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/131112?language=oracle) 
 
 ### 성능 요약
 
-메모리: 0.0 MB, 시간: 0.00 ms
+메모리: undefined, 시간: 
 
 ### 구분
 
@@ -12,11 +12,11 @@
 
 ### 채점결과
 
-Empty
+합계: 100.0 / 100.0
 
 ### 제출 일자
 
-2025년 09월 24일 22:59:25
+2026년 05월 08일 18:59:12
 
 ### 문제 설명
 
