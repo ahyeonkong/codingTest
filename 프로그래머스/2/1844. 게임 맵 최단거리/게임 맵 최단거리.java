@@ -1,40 +1,53 @@
 import java.util.*;
 
 class Solution {
-    int[] dx = {1, -1, 0, 0};
-    int[] dy = {0, 0, 1, -1};
+
+    static int[] dx = {-1, 1, 0, 0};
+    static int[] dy = {0, 0, -1, 1};
 
     public int solution(int[][] maps) {
-        int n = maps.length;
-        int m = maps[0].length;
 
-        int[][] visited = new int[n][m];
+        int row = maps.length;
+        int col = maps[0].length;
 
-        bfs(maps, visited, n, m);
-
-        int answer = visited[n - 1][m - 1];
-        return (answer == 0) ? -1 : answer;
-    }
-
-    private void bfs(int[][] maps, int[][] visited, int n, int m) {
-        visited[0][0] = 1;
         Queue<int[]> queue = new LinkedList<>();
-        queue.add(new int[]{0, 0});
 
-        while (!queue.isEmpty()) {
+        queue.offer(new int[]{0,0});
+
+        while(!queue.isEmpty()) {
+
             int[] current = queue.poll();
+
             int x = current[0];
             int y = current[1];
 
-            for (int i = 0; i < 4; i++) {
+            for(int i = 0; i < 4; i++) {
+
                 int nx = x + dx[i];
                 int ny = y + dy[i];
 
-                if (nx >= 0 && nx < n && ny >= 0 && ny < m && maps[nx][ny] == 1 && visited[nx][ny] == 0) {
-                    visited[nx][ny] = visited[x][y] + 1;
-                    queue.add(new int[]{nx, ny});
+                if(nx < 0 || ny < 0 || nx >= row || ny >= col) {
+                    continue;
                 }
+
+                if(maps[nx][ny] == 0) {
+                    continue;
+                }
+
+                if(maps[nx][ny] > 1) {
+                    continue;
+                }
+
+                maps[nx][ny] = maps[x][y] + 1;
+
+                queue.offer(new int[]{nx, ny});
             }
         }
+
+        if(maps[row - 1][col - 1] == 1) {
+            return -1;
+        }
+
+        return maps[row - 1][col - 1];
     }
 }
