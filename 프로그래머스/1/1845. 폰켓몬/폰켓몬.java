@@ -3,20 +3,14 @@ import java.util.*;
 class Solution {
     public int solution(int[] nums) {
         int answer = 0;
-        int length = nums.length / 2;
-        HashSet<Integer> hashset = new HashSet<>();
-        
-        for(int i = 0; i < nums.length; i++){
-            hashset.add(nums[i]);
+        Set<Integer> set = new HashSet<>();
+        for(int num: nums){
+            set.add(num);
         }
         
-        int size = hashset.size();
-        
-        if(size >= length)
-            answer = length;
-        else
-            answer = size;
-        
+        int maxPick = nums.length / 2;
+        answer = Math.min(set.size(), maxPick);
+
         return answer;
     }
 }
