@@ -1,12 +1,12 @@
 class Solution {
     public int solution(int[] numbers) {
-        int answer = 0;
-        for(int i = 0; i < 10; i++)
-            answer += i;
+        int answer = -1;
+        int sum = 45;
         
-        for(int j = 0; j < numbers.length; j++)
-            answer -= numbers[j];
-        
+        for(int n: numbers){
+            sum -= n;
+        }
+        answer = sum;
         return answer;
     }
 }
