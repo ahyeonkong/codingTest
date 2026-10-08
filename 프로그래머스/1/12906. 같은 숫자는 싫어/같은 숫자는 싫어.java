@@ -2,21 +2,27 @@ import java.util.*;
 
 public class Solution {
     public int[] solution(int []arr) {
-        Stack<Integer> stack = new Stack<>();
-        for(int i = 0; i < arr.length; i++){
-            if(!stack.empty()){
-                if(stack.peek() != arr[i])
-                    stack.push(arr[i]);
+
+        int count = 1;
+
+        for(int i = 1; i < arr.length; i++){
+            if(arr[i] != arr[i-1]){
+                count++;
             }
-            else
-                stack.push(arr[i]);
         }
+        System.out.println(count);
         
-        int[] answer = new int[stack.size()];
+        int[] answer = new int[count];
+        answer[0] = arr[0];
+        int j = 1;
         
-        for(int j = stack.size() - 1; j >= 0; j--)
-            answer[j] = stack.pop();
-        
+        for(int i = 1; i < arr.length; i++){
+            if(arr[i] != arr[i-1]){
+                answer[j++] = arr[i];
+            }
+        }
+
+
         return answer;
     }
 }
